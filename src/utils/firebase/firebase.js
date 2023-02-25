@@ -4,6 +4,7 @@ import { initializeApp } from 'firebase/app';
 // https://firebase.google.com/docs/web/setup#available-libraries
 import {
   getAuth,
+  signOut,
   signInWithRedirect,
   signInWithPopup,
   GoogleAuthProvider,
@@ -80,4 +81,8 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
     return;
   }
   return signInWithEmailAndPassword(auth, email, password);
+};
+
+export const signOutUser = () => {
+  signOut(auth);
 };
