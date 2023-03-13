@@ -4,7 +4,7 @@ import CategoriesPreview from '../categories-preview/categories-preview';
 import './shop.scss';
 import { useEffect } from 'react';
 import { getCategoriesAndDocuments } from '../../utils/firebase/firebase';
-import { setCategoriesMap } from '../../store/categories/categories.action';
+import { setCategoriesMap } from '../../store/categories/categories-action';
 import { useDispatch } from 'react-redux';
 
 const Shop = () => {
