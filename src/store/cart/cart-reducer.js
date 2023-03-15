@@ -1,6 +1,11 @@
 import { CART_ACTION_TYPES } from './cart-types';
 
-export const cartReducer = (state, action) => {
+const INITIAL_STATE = {
+  isCartOpen: false,
+  cartItems: [],
+};
+
+export const cartReducer = (state = INITIAL_STATE, action = {}) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -13,7 +18,7 @@ export const cartReducer = (state, action) => {
     case CART_ACTION_TYPES.SET_CART_ITEMS:
       return {
         ...state,
-        ...payload,
+        cartItems: payload,
       };
 
     default:
