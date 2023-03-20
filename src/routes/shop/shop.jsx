@@ -3,20 +3,14 @@ import Category from '../category/category';
 import CategoriesPreview from '../categories-preview/categories-preview';
 import './shop.scss';
 import { useEffect } from 'react';
-import { getCategoriesAndDocuments } from '../../utils/firebase/firebase';
-import { setCategoriesMap } from '../../store/categories/categories-action';
+import { fetchCategoriesStart } from '../../store/categories/categories-action';
 import { useDispatch } from 'react-redux';
 
 const Shop = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getCategoriesMap = async () => {
-      const categoriesArray = await getCategoriesAndDocuments();
-      dispatch(setCategoriesMap(categoriesArray));
-    };
-
-    getCategoriesMap();
+    dispatch(fetchCategoriesStart());
   }, []);
 
   return (
