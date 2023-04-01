@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Category from '../category/category';
 import CategoriesPreview from '../categories-preview/categories-preview';
-import './shop.scss';
 import { useEffect } from 'react';
 import { fetchCategoriesStart } from '../../store/categories/categories-action';
 import { useDispatch } from 'react-redux';

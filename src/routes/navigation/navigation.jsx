@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Outlet, Link } from 'react-router-dom';
 import { ReactComponent as CrownLogo } from '../../assets/crown.svg';
-import { signOutUser } from '../../utils/firebase/firebase';
 import { selectCurrentUser } from '../../store/user/user-selector';
 import { selectIsCartOpen } from '../../store/cart/cart-selector';
 import CartIcon from '../../component/cart-icon/cart-icon';

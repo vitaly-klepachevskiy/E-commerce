@@ -7,7 +7,7 @@ import {
 } from '../../store/categories/categories-selector';
 import ProductCard from '../../component/product-card/product-card';
 import Spinner from '../../component/spinner/spinner';
-import './category.scss';
+import { CategoryContainer, CategoryTitle } from './category.styles';
 
 const Category = () => {
   const { category } = useParams();
@@ -19,20 +19,18 @@ const Category = () => {
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
-  console.log(isLoading);
-
   return (
     <>
-      <h2 className="category-title">{category.toUpperCase()}</h2>
+      <CategoryTitle>{category.toUpperCase()}</CategoryTitle>
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className="category-container">
+        <CategoryContainer>
           {products &&
             products.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
-        </div>
+        </CategoryContainer>
       )}
     </>
   );
