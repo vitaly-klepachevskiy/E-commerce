@@ -6,8 +6,13 @@ import {
 } from '../../store/cart/cart-action';
 import { selectCartItems } from '../../store/cart/cart-selector';
 import './checkout-item.scss';
+import { CartItem } from '../../store/cart/cart-types';
 
-const CheckoutItem = ({ cartItem }) => {
+type CheckoutItemProps = {
+  cartItem: CartItem,
+};
+
+const CheckoutItem: React.FC<CheckoutItemProps> = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
 
   const dispatch = useDispatch();

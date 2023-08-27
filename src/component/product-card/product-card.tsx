@@ -3,8 +3,13 @@ import { addItemToCart } from '../../store/cart/cart-action';
 import { selectCartItems } from '../../store/cart/cart-selector';
 import Button, { BUTTON_CLASS_TYPES } from '../button/button';
 import './product-card.scss';
+import { CategoryItem } from '../../store/categories/categories-types';
 
-const ProductCard = ({ product }) => {
+type ProductCardProps = {
+  product: CategoryItem;
+};
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
 
