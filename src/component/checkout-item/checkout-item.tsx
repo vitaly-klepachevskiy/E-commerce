@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   addItemToCart,
@@ -9,10 +10,10 @@ import './checkout-item.scss';
 import { CartItem } from '../../store/cart/cart-types';
 
 type CheckoutItemProps = {
-  cartItem: CartItem,
+  cartItem: CartItem;
 };
 
-const CheckoutItem: React.FC<CheckoutItemProps> = ({ cartItem }) => {
+const CheckoutItem: React.FC<CheckoutItemProps> = memo(({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
 
   const dispatch = useDispatch();
@@ -51,6 +52,6 @@ const CheckoutItem: React.FC<CheckoutItemProps> = ({ cartItem }) => {
       </div>
     </div>
   );
-};
+});
 
 export default CheckoutItem;
