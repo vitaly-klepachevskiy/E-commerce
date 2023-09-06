@@ -7,10 +7,16 @@ export const CheckoutContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+
+  @media screen and (max-width: 800px) {
+    width: auto;
+    margin: auto;
+  }
 `;
 
 export const CheckoutHeader = styled.div`
   width: 100%;
+  font-size: 10px;
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
